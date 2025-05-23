@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card auth-form">
+                        <div class="card-body">
+                            <h1 class="card-title">Sign up</h1>
+                            <p class="form-text mb-4">Create your account to get started.</p>
+                            
+                            <!-- Registration Form -->
+                            <form th:action="@{/register}" method="post" class="needs-validation" novalidate>
+                                <!-- Full name input -->
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your full name.
+                                    </div>
+                                </div>
+                                
+                                <!-- Email input -->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" 
+                                           placeholder="user@example.com" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                                
+                                <!-- Password input -->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" name="password" 
+                                               required minlength="8">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button" 
+                                                data-target="#password">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <div class="invalid-feedback">
+                                            Password must be at least 8 characters.
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted">
+                                        Use at least 8 characters with a mix of letters, numbers, and symbols.
+                                    </small>
+                                </div>
+                                
+                                <!-- Confirm Password input -->
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
+                                               required minlength="8">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button" 
+                                                data-target="#confirmPassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <div class="invalid-feedback">
+                                            Passwords do not match.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Terms and Conditions -->
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and 
+                                        <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree to our terms and conditions.
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit button -->
+                                <div class="d-grid gap-2 mb-3">
+                                    <button type="submit" class="btn btn-primary">Create Account</button>
+                                </div>
+                            </form>
+                            
+                            <!-- Divider -->
+                            <div class="divider">
+                                <span>or</span>
+                            </div>
+                            
+                            <!-- Login link -->
+                            <p class="text-center mb-0">
+                                Already have an account? <a th:href="@{/login}" class="text-decoration-none">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Custom validation for matching passwords -->
+    <th:block layout:fragment="scripts">
+        <script>
+            // Password matching validation
+            document.addEventListener('DOMContentLoaded', function() {
+                const password = document.getElementById('password');
+                const confirmPassword = document.getElementById('confirmPassword');
+                
+                function validatePasswordMatch() {
+                    if (password.value !== confirmPassword.value) {
+                        confirmPassword.setCustomValidity('Passwords do not match');
+                    } else {
+                        confirmPassword.setCustomValidity('');
+                    }
+                }
+                
+                password.addEventListener('change', validatePasswordMatch);
+                confirmPassword.addEventListener('keyup', validatePasswordMatch);
+            });
+        </script>
+    </th:block>
+</body>
+</html>

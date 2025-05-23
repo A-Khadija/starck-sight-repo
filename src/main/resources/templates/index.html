@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h1>Revolutionizing your Stack Overflow experience using Hadoop framework</h1>
+                        <p class="lead">
+                            Transform the way you tackle coding challenges with our Real-Time StackOverflow Tag & Q&A Trend
+                            Analyzer: instantly surface the three highest-ranked answers to any query, so you never waste time scrolling
+                            through endless threads. Interactive visual dashboards reveal which technologies are surging, how quickly
+                            questions get answered, and which topics spark the most engagement—empowering you to pinpoint the
+                            fastest, most reliable solutions and stay ahead of evolving developer trends. Whether you need a quick fix or
+                            deep insights into community behavior, our streamlined search and trend-spotting tools deliver clarity and
+                            speed exactly when you need them.
+                        </p>
+                        <div class="mt-4">
+                            <a th:href="@{/signup}" class="btn btn-primary btn-lg me-3">Get Started</a>
+                            <a th:href="@{/about}" class="btn btn-outline-primary btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block position-relative">
+                        <!-- Blue curved shapes for visual appeal -->
+                        <div class="curved-shape curved-shape-top-right">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#2FA1FF" d="M42.7,-75.1C55,-66.9,64.2,-54.5,72.1,-40.9C80,-27.2,86.5,-13.6,85.8,-0.4C85.1,12.9,77.1,25.7,68.8,38.1C60.5,50.5,51.9,62.3,40.3,69.4C28.7,76.5,14.4,78.9,-0.4,79.6C-15.2,80.3,-30.3,79.3,-43.2,72.9C-56.1,66.6,-66.7,54.9,-75.1,41.2C-83.5,27.5,-89.7,13.7,-88.7,0.6C-87.7,-12.6,-79.7,-25.2,-70.9,-37.2C-62.1,-49.2,-52.5,-60.6,-40.3,-68.7C-28,-76.9,-14,-81.8,0.5,-82.8C15.1,-83.7,30.3,-83.3,42.7,-75.1Z" transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                        <div class="curved-shape curved-shape-bottom-left">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#2FA1FF" d="M42.9,-73.2C54.4,-68.1,61.6,-54.3,68.5,-40.5C75.4,-26.7,82,-12.9,82.7,1.5C83.5,15.8,78.5,31.6,70.1,45.2C61.8,58.9,50.1,70.4,36.1,77.8C22.1,85.1,5.9,88.2,-8.9,85.9C-23.7,83.5,-37.1,75.8,-48.4,65.9C-59.7,56.1,-68.9,44.1,-75.4,30.2C-81.9,16.4,-85.8,0.6,-83.5,-14.3C-81.3,-29.2,-73,-43.2,-61.3,-51.9C-49.7,-60.6,-34.7,-64,-21.6,-65.8C-8.5,-67.6,2.7,-67.7,15.3,-69C27.9,-70.3,41.9,-72.7,42.9,-73.2Z" transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                        <img src="https://placehold.co/600x400/2FA1FF/FFFFFF/?text=StackSight+Analytics" alt="StackSight Analytics" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Why Choose StackSight?</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="bi bi-lightning-charge-fill text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <h3>Real-Time Insights</h3>
+                                <p>Get instant access to trending topics and solutions in the developer community.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="bi bi-bar-chart-line-fill text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <h3>Visual Analytics</h3>
+                                <p>Interactive dashboards help you understand patterns and trends at a glance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="bi bi-search text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <h3>Time-Saving Search</h3>
+                                <p>Quickly find the top 3 answers without scrolling through endless threads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2>Ready to transform your coding experience?</h2>
+                        <p class="lead mb-4">Join thousands of developers who are saving time and staying ahead with StackSight.</p>
+                        <a th:href="@{/signup}" class="btn btn-primary btn-lg">Create Your Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
